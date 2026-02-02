@@ -22,7 +22,7 @@ Ahbap Tekirdağ gönüllülerinin Şubat 2026 etkinliklerini gösteren interakti
 
 ## Kullanım
 
-Takvimi görüntülemek için: [https://asyamirzaoglu.github.io/ahbap-subat-takvim/](https://asyamirzaoglu.github.io/ahbap-subat-takvim/)
+Takvimi görüntülemek için: [https://ahbap-tekirdag.github.io/ahbap-subat-takvim/](https://ahbap-tekirdag.github.io/ahbap-subat-takvim/)
 
 ## Teknolojiler
 
