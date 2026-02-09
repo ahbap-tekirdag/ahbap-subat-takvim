@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahbap Tekirdağ - Şubat 2026 Etkinlik Takvimi</title>
+    <title id="pageTitle">Ahbap Etkinlik Takvimi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -43,12 +43,12 @@
                     <path d="M168 7 C164 3, 158 3, 155 7 C152 3, 146 3, 142 7 C137 13, 137 21, 155 31 C173 21, 173 13, 168 7 Z" fill="#8BC53F"/>
                 </svg>
                 <div class="header-text">
-                    <h1>Tekirdağ - Şubat 2026 Etkinlik Takvimi</h1>
-                    <p>Sevginin ve gerçeğin peşindeyiz</p>
+                    <h1 id="headerTitle">Etkinlik Takvimi</h1>
+                    <p id="headerSlogan">Sevginin ve gerçeğin peşindeyiz</p>
                 </div>
             </div>
             <div class="header-right">
-                <a href="subat-takvim.pdf" download="Ahbap-Subat-2026-Takvim.pdf" class="download-btn">
+                <a id="pdfLink" href="subat-takvim.pdf" download class="download-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                         <polyline points="7 10 12 15 17 10"/>
@@ -67,7 +67,7 @@
                     </svg>
                     Takvime Ekle
                 </button>
-                <div class="month-badge">Şubat 2026</div>
+                <div class="month-badge" id="monthBadge">Yükleniyor...</div>
             </div>
         </header>
 
@@ -83,86 +83,13 @@
                 <div class="weekday">Pazar</div>
             </div>
 
-            <div class="days">
-                <!-- Week 1 -->
-                <div class="day empty"></div>
-                <div class="day empty"></div>
-                <div class="day empty"></div>
-                <div class="day empty"></div>
-                <div class="day empty"></div>
-                <div class="day empty"></div>
-                <div class="day sunday has-event">
-                    <div class="day-number">1</div>
-                    <div class="event" onclick="openModal('kitap')">
-                        <div class="event-title"><span class="event-icon">📚</span> Kitap Arkadaşım</div>
-                        <div class="event-desc">Küçük Prens ile yolculuğa başlıyoruz</div>
-                    </div>
-                </div>
-
-                <!-- Week 2 -->
-                <div class="day"><div class="day-number">2</div></div>
-                <div class="day"><div class="day-number">3</div></div>
-                <div class="day"><div class="day-number">4</div></div>
-                <div class="day"><div class="day-number">5</div></div>
-                <div class="day"><div class="day-number">6</div></div>
-                <div class="day saturday"><div class="day-number">7</div></div>
-                <div class="day sunday has-event">
-                    <div class="day-number">8</div>
-                    <div class="event" onclick="openModal('gonullu')">
-                        <div class="event-title"><span class="event-icon">🤝</span> Gönüllü Tanışma & 6 Şubat Depremini Anma</div>
-                        <div class="event-desc">Yeni Gönüllülere Sunum ve Depremi Anma</div>
-                    </div>
-                </div>
-
-                <!-- Week 3 -->
-                <div class="day"><div class="day-number">9</div></div>
-                <div class="day"><div class="day-number">10</div></div>
-                <div class="day"><div class="day-number">11</div></div>
-                <div class="day"><div class="day-number">12</div></div>
-                <div class="day"><div class="day-number">13</div></div>
-                <div class="day saturday"><div class="day-number">14</div></div>
-                <div class="day sunday has-event">
-                    <div class="day-number">15</div>
-                    <div class="event" onclick="openModal('kedi')">
-                        <div class="event-title"><span class="event-icon">🐱</span> Kediler Günü</div>
-                        <div class="event-desc">Patili Dostlarımıza Yuva & Mama</div>
-                    </div>
-                </div>
-
-                <!-- Week 4 -->
-                <div class="day"><div class="day-number">16</div></div>
-                <div class="day"><div class="day-number">17</div></div>
-                <div class="day"><div class="day-number">18</div></div>
-                <div class="day"><div class="day-number">19</div></div>
-                <div class="day"><div class="day-number">20</div></div>
-                <div class="day saturday has-event">
-                    <div class="day-number">21</div>
-                    <div class="event" onclick="openModal('orgu')">
-                        <div class="event-title"><span class="event-icon">🧶</span> Sevgiye İlmek</div>
-                        <div class="event-desc">Her ilmek bir kalbe dokunsun diye buluşuyoruz.</div>
-                    </div>
-                </div>
-                <div class="day sunday"><div class="day-number">22</div></div>
-
-                <!-- Week 5 -->
-                <div class="day"><div class="day-number">23</div></div>
-                <div class="day"><div class="day-number">24</div></div>
-                <div class="day"><div class="day-number">25</div></div>
-                <div class="day"><div class="day-number">26</div></div>
-                <div class="day"><div class="day-number">27</div></div>
-                <div class="day saturday has-event">
-                    <div class="day-number">28</div>
-                    <div class="event" onclick="openModal('quiz')">
-                        <div class="event-title"><span class="event-icon">🎮</span> Quiz Night</div>
-                        <div class="event-desc">Kahkaha, takım ruhu ve bol eğlencenin bir araya geldiği sosyal buluşma.</div>
-                    </div>
-                </div>
-                <div class="day empty"></div>
+            <div class="days" id="calendarDays">
+                <!-- Takvim günleri JavaScript ile doldurulacak -->
             </div>
         </div>
 
         <!-- Footer -->
-        <footer class="footer">Ahbap Tekirdağ Gönüllüleri</footer>
+        <footer class="footer" id="footerText">Ahbap Gönüllüleri</footer>
     </div>
 
     <!-- Modal -->
