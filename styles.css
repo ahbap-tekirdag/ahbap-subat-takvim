@@ -105,7 +105,12 @@ body {
 .header-text p { font-size: 0.7rem; color: var(--text-medium); font-weight: 400; }
 .month-badge { background: var(--ahbap-green); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
 .header-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.month-selector { display: flex; gap: 8px; background: var(--white); padding: 4px; border-radius: 20px; box-shadow: var(--shadow); }
+.month-selector { display: flex; gap: 8px; background: var(--white); padding: 4px; border-radius: 20px; box-shadow: var(--shadow); align-items: center; }
+.month-nav-btn { background: none; border: none; color: var(--ahbap-green); cursor: pointer; padding: 4px 8px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; border-radius: 12px; }
+.month-nav-btn:hover { background: var(--ahbap-green-pale); transform: scale(1.1); }
+.month-nav-btn:active { transform: scale(0.95); }
+.month-nav-btn svg { width: 20px; height: 20px; }
+.current-month-display { color: var(--text-dark); padding: 4px 12px; font-weight: 600; font-size: 0.9rem; min-width: 120px; text-align: center; }
 .month-link { text-decoration: none; color: var(--text-dark); padding: 6px 14px; border-radius: 16px; font-weight: 500; font-size: 0.8rem; transition: all 0.2s ease; }
 .month-link:hover { background: var(--ahbap-green-pale); color: var(--ahbap-green-dark); }
 .month-link.active { background: var(--ahbap-green); color: white; }
@@ -117,12 +122,18 @@ body {
 .calendar { flex: 1; background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; min-height: 0; }
 .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); background: var(--ahbap-green); }
 .weekday { padding: 10px 5px; text-align: center; font-weight: 500; color: white; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; }
-.days { flex: 1; display: grid; grid-template-columns: repeat(7, 1fr); grid-template-rows: repeat(5, minmax(110px, 1fr)); }
-.day { border: 1px solid #f0f0f0; padding: 6px; display: flex; flex-direction: column; transition: all 0.2s ease; background: var(--white); }
+.days { flex: 1; display: grid; grid-template-columns: repeat(7, 1fr); grid-template-rows: repeat(6, minmax(100px, 1fr)); }
+.day { border: 1px solid #f0f0f0; padding: 6px; display: flex; flex-direction: column; transition: all 0.2s ease; background: var(--white); position: relative; }
 .day:hover { background: var(--ahbap-green-pale); }
 .day-number { font-size: 0.8rem; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; }
 .day.has-event .day-number { background: var(--ahbap-green); color: white; }
 .day.empty { background: #fafafa; }
+.day.next-month { background: #f5f5f5; opacity: 0.6; }
+.day.next-month.has-event { background: #f5f5f5; opacity: 1; }
+.day.next-month .day-number { color: var(--text-light); font-size: 0.9em; }
+.day.next-month.has-event .day-number { color: var(--white); }
+.day.ozel-gun { background: linear-gradient(135deg, #fff 0%, #fafafa 100%); }
+.ozel-gun-badge { position: absolute; top: 4px; right: 4px; font-size: 0.55rem; font-style: italic; font-weight: 300; line-height: 1.2; white-space: nowrap; max-width: 90%; text-align: right; }
 .day.sunday .day-number { color: #e74c3c; }
 .day.sunday.has-event .day-number, .day.saturday.has-event .day-number { background: var(--ahbap-green); color: white; }
 .day.saturday .day-number { color: var(--ahbap-green-dark); }
@@ -140,17 +151,17 @@ body {
 /* Modal */
 .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(3px); }
 .modal-overlay.active { display: flex; }
-.modal { background: white; border-radius: 20px; padding: 25px; max-width: 450px; width: 90%; max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); animation: modalIn 0.3s ease; }
-.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid var(--ahbap-green-pale); }
+.modal { background: white; border-radius: 20px; padding: 20px; max-width: 550px; width: 90%; max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); animation: modalIn 0.3s ease; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--ahbap-green-pale); }
 .modal-header h3 { color: var(--ahbap-green-dark); font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
 .modal-close { background: var(--ahbap-green-pale); border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; color: var(--ahbap-green-dark); transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; }
 .modal-close:hover { background: var(--ahbap-green); color: white; }
-.modal-date { display: inline-flex; align-items: center; gap: 8px; background: var(--ahbap-green); color: white; padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; }
+.modal-date { display: inline-flex; align-items: center; gap: 8px; background: var(--ahbap-green); color: white; padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; }
 .modal-content p { color: var(--text-medium); font-size: 0.9rem; line-height: 1.7; }
-.modal-animation { text-align: center; margin-top: 20px; font-size: 4rem; animation: bounce 1s ease infinite; }
-.modal-gif { text-align: center; margin-top: 20px; }
+.modal-animation { text-align: center; margin-top: 16px; font-size: 4rem; animation: bounce 1s ease infinite; }
+.modal-gif { text-align: center; margin-top: 16px; }
 .modal-gif img { max-width: 150px; height: auto; border-radius: 10px; }
-.calendar-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 20px; padding: 12px 20px; background: var(--ahbap-green); color: white; border: none; border-radius: 25px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
+.calendar-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 16px; padding: 12px 20px; background: var(--ahbap-green); color: white; border: none; border-radius: 25px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
 .calendar-btn:hover { background: var(--ahbap-green-dark); transform: scale(1.02); }
 .calendar-btn svg { width: 20px; height: 20px; }
 
@@ -161,12 +172,16 @@ body {
     .logo-section { flex-direction: column; gap: 5px; }
     .header-text h1 { font-size: 0.9rem; }
     .month-badge { padding: 6px 14px; font-size: 0.75rem; }
-    .header-right { flex-direction: row; gap: 8px; }
+    .header-right { flex-direction: row; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .month-selector { padding: 3px; }
+    .current-month-display { font-size: 0.75rem; min-width: 100px; }
+    .month-nav-btn svg { width: 16px; height: 16px; }
     .download-btn { padding: 6px 12px; font-size: 0.75rem; }
     .download-btn svg { width: 14px; height: 14px; }
     .weekday { font-size: 0.55rem; padding: 8px 2px; }
     .day { padding: 4px; }
     .day-number { font-size: 0.7rem; width: 20px; height: 20px; }
+    .ozel-gun-badge { font-size: 0.38rem; top: 3px; right: 2px; max-width: 85%; }
     .event { padding: 4px 5px; }
     .event-title { font-size: 0.5rem; }
     .event-icon { font-size: 0.6rem; }
@@ -174,9 +189,14 @@ body {
     .floating-heart { opacity: 0.12; }
 }
 
+@media (max-width: 600px) {
+    .ozel-gun-badge { font-size: 0.42rem; }
+}
+
 @media (max-width: 480px) {
     .weekday { font-size: 0.45rem; }
     .day-number { font-size: 0.6rem; width: 18px; height: 18px; }
+    .ozel-gun-badge { font-size: 0.48rem; }
     .event-title { font-size: 0.45rem; }
     .modal { padding: 20px; margin: 10px; }
 }
@@ -198,7 +218,7 @@ body {
     .calendar { flex: none !important; height: auto !important; box-shadow: none !important; border-radius: 16px !important; overflow: hidden !important; border: 1px solid #e0e0e0 !important; }
     .weekdays { display: grid !important; grid-template-columns: repeat(7, 1fr) !important; background: #8BC53F !important; }
     .weekday { color: white !important; padding: 10px 5px !important; font-size: 0.7rem !important; text-transform: uppercase !important; }
-    .days { display: grid !important; grid-template-columns: repeat(7, 1fr) !important; grid-template-rows: repeat(5, minmax(90px, auto)) !important; }
+    .days { display: grid !important; grid-template-columns: repeat(7, 1fr) !important; grid-template-rows: repeat(6, minmax(80px, auto)) !important; }
     .day { border: 1px solid #f0f0f0 !important; padding: 6px !important; background: white !important; }
     .day.empty { background: #fafafa !important; }
     .day-number { font-size: 0.8rem !important; width: 24px !important; height: 24px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; border-radius: 50% !important; }

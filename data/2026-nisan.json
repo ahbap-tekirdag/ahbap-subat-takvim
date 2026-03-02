@@ -8,6 +8,15 @@
   "slogan": "Sevginin ve gerçeğin peşindeyiz",
   "pdfDosyasi": "",
   "konum": "Tekirdağ",
+  "ozelGunler": [
+    {
+      "gun": 23,
+      "tur": "resmi",
+      "baslik": "23 Nisan",
+      "emoji": "🎈",
+      "renk": "#e74c3c"
+    }
+  ],
   "etkinlikler": [
     {
       "id": "kitap-nisan",
@@ -16,7 +25,7 @@
       "baslik": "Kitap Arkadaşım",
       "kisa": "Kütüphane Haftası'na özel kitap sohbeti",
       "detay": "Kütüphane Haftası'na özel olarak Tolstoy'un 'İnsan Ne İle Yaşar' kitabını birlikte okuyacak ve üzerine keyifli bir sohbet gerçekleştireceğiz. Kitabın bize verdiği mesajları konuşacak ve paylaşımlarda bulunacağız.",
-      "gif": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDA3ZG5nNHE0ZTFsdWl3d2QzZnBrOG14NHQ5N2xkNmFkNHM5bjV5aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/15epGYaUWf2dkMT9ro/giphy.gif"
+      "gif": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHltNTcwYjY1N3RmM3l5b3RnOWVjcTYybHl6N245bHRtd2FpMzB3ciZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/c4okxvvhXPRpBttlAn/giphy.gif"
     }
   ]
 }

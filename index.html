@@ -49,9 +49,17 @@
             </div>
             <div class="header-right">
                 <div class="month-selector">
-                    <a href="?ay=2026-subat" class="month-link">Şubat</a>
-                    <a href="?ay=2026-mart" class="month-link">Mart</a>
-                    <a href="?ay=2026-nisan" class="month-link">Nisan</a>
+                    <button class="month-nav-btn" id="prevMonth" onclick="changeMonth(-1)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <span class="current-month-display" id="currentMonthDisplay">Mart 2026</span>
+                    <button class="month-nav-btn" id="nextMonth" onclick="changeMonth(1)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
                 <a id="pdfLink" href="subat-takvim.pdf" download class="download-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

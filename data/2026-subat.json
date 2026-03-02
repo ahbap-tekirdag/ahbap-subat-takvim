@@ -8,6 +8,15 @@
   "slogan": "Sevginin ve gerçeğin peşindeyiz",
   "pdfDosyasi": "subat-takvim.pdf",
   "konum": "Tekirdağ",
+  "ozelGunler": [
+    {
+      "gun": 14,
+      "tur": "ozel",
+      "baslik": "Sevgililer Günü",
+      "emoji": "💕",
+      "renk": "#ff6b9d"
+    }
+  ],
   "etkinlikler": [
     {
       "id": "kitap",
@@ -47,7 +56,7 @@
     },
     {
       "id": "quiz",
-      "gun": 28,
+      "gun": 1,
       "icon": "🎮",
       "baslik": "Quiz Night",
       "kisa": "Kahkaha, takım ruhu ve bol eğlencenin bir araya geldiği sosyal buluşma.",
