@@ -46,7 +46,6 @@ function showEmptyMonthMessage() {
     document.getElementById('pageTitle').textContent = `Ahbap Tekirdağ - ${ayIsmi} ${yil} Etkinlik Takvimi`;
     document.getElementById('headerTitle').textContent = `Tekirdağ - ${ayIsmi} ${yil} Etkinlik Takvimi`;
     document.getElementById('headerSlogan').textContent = 'Sevginin ve gerçeğin peşindeyiz';
-    document.getElementById('monthBadge').textContent = `${ayIsmi} ${yil}`;
     document.getElementById('currentMonthDisplay').textContent = `${ayIsmi} ${yil}`;
     document.getElementById('footerText').textContent = 'Ahbap Tekirdağ Gönüllüleri';
     document.getElementById('pdfLink').style.display = 'none';
@@ -69,7 +68,6 @@ async function initializeApp() {
     document.getElementById('pageTitle').textContent = `Ahbap ${config.sehir} - ${config.ay} ${config.yil} Etkinlik Takvimi`;
     document.getElementById('headerTitle').textContent = `${config.sehir} - ${config.ay} ${config.yil} Etkinlik Takvimi`;
     document.getElementById('headerSlogan').textContent = config.slogan;
-    document.getElementById('monthBadge').textContent = `${config.ay} ${config.yil}`;
     document.getElementById('currentMonthDisplay').textContent = `${config.ay} ${config.yil}`;
     document.getElementById('footerText').textContent = config.footer;
 
@@ -271,7 +269,6 @@ function openModal(eventId) {
     currentEventId = eventId;
     const event = events[eventId];
     document.getElementById('modalTitle').textContent = event.title;
-    document.getElementById('modalDate').textContent = event.date;
     document.getElementById('modalDesc').innerHTML = event.desc.replace(/\n/g, '<br>');
     document.getElementById('modalAnimation').innerHTML = event.gif ?
         `<div class="modal-gif"><img src="${event.gif}" alt="Etkinlik animasyonu"></div>` : '';
