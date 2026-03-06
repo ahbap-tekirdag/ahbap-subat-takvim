@@ -528,7 +528,9 @@ async function changeMonth(direction) {
     if (newIndex < 0) { newIndex = 11; newYil--; }
     else if (newIndex > 11) { newIndex = 0; newYil++; }
 
-    const newUrl = `?ay=${newYil}-${ayBilgileri[newIndex].key}`;
+    // Şehir parametresini koru
+    const sehir = getSehirFromUrl();
+    const newUrl = `?sehir=${sehir}&ay=${newYil}-${ayBilgileri[newIndex].key}`;
     window.history.pushState({}, '', newUrl);
     await loadConfig();
 }
